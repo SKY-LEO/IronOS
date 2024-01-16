@@ -292,6 +292,11 @@ bool pdbs_dpm_evaluate_capability(const pd_msg *capabilities, pd_msg *request) {
     // request->obj[0] |= PD_RDO_USB_COMMS;
 #ifdef POW_EPR
     request->obj[0] |= PD_RDO_EPR_CAPABLE;
+    #ifdef NEEDS_VBUS_PROBE
+    if (USBPowerDelivery::isVBUSConnected() == false) {
+      request->obj[0] |= PD_RDO_EPR_CAPABLE;
+    }
+    #endif
 #endif
 
     /* Update requested voltage */

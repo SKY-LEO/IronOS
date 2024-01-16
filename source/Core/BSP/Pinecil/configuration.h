@@ -130,13 +130,13 @@
 #define VOLTAGE_DIV            467                       // 467 - Default divider from schematic
 #define CALIBRATION_OFFSET     900                       // 900 - Default adc offset in uV
 #define MIN_CALIBRATION_OFFSET 100                       // Min value for calibration
-#define PID_POWER_LIMIT        70                        // Sets the max pwm power limit
+#define PID_POWER_LIMIT        120                       // Sets the max pwm power limit
 #define POWER_LIMIT            0                         // 0 watts default limit
-#define MAX_POWER_LIMIT        70                        //
+#define MAX_POWER_LIMIT        120                       //
 #define POWER_LIMIT_STEPS      5                         //
 #define OP_AMP_GAIN_STAGE      OP_AMP_GAIN_STAGE_PINECIL // Uses TS100 resistors
 #define TEMP_uV_LOOKUP_HAKKO                             // Use Hakko lookup table
-#define USB_PD_VMAX            20                        // Maximum voltage for PD to negotiate
+#define USB_PD_VMAX            28                        // Maximum voltage for PD to negotiate
 #define PID_TIM_HZ             (8)                       // Tick rate of the PID loop
 #define MAX_TEMP_C             450                       // Max soldering temp selectable °C
 #define MAX_TEMP_F             850                       // Max soldering temp selectable °F
@@ -146,12 +146,13 @@
 #define MIN_BOOST_TEMP_F       480                       // The min settable temp for boost mode °F
 
 #define POW_PD             1
-#define USB_PD_EPR_WATTAGE 0 /*No EPR (Yet?) */
+#define USB_PD_EPR_WATTAGE 140 /* Enable EPR */
 #define POW_PD_EXT         0
 #define POW_QC             1
 #define POW_DC             1
 #define POW_QC_20V         1
 #define ENABLE_QC2         1
+#define POW_EPR            1 /* Enable EPR */
 #define TEMP_TMP36
 #define ACCEL_BMA
 #define ACCEL_SC7
