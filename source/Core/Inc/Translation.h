@@ -137,6 +137,7 @@ struct TranslationIndexTable {
   uint16_t SettingTS_TipString;
   uint16_t SettingST_TipString;
   uint16_t SettingHS_TipString;
+  uint16_t SettingPTS_TipString;
 
   uint16_t SettingRightChar;
   uint16_t SettingLeftChar;

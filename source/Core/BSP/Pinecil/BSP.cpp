@@ -101,6 +101,8 @@ uint8_t getTipResistanceX10() {
     return 62;
   case tipTypePinecil_t::HS_FNIRSI_TIP:
     return 60;
+  case tipTypePinecil_t::PTS200_TIP:
+    return 40;
   default:
     return 75;
   }
@@ -117,6 +119,8 @@ uint16_t getTipThermalMass() {
     return 160;
   case tipTypePinecil_t::HS_FNIRSI_TIP:
     return 280;
+  case tipTypePinecil_t::PTS200_TIP:
+    return 160;
   default:
     return 65;
   }
@@ -129,6 +133,8 @@ uint16_t getTipInertia() {
     return 300;
   case tipTypePinecil_t::HS_FNIRSI_TIP:
     return 2000;
+  case tipTypePinecil_t::PTS200_TIP:
+    return 600;
   default:
     return 65;
   } 

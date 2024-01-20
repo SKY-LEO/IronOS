@@ -154,7 +154,15 @@
             "include": [
                 "MODEL_Pinecil"
             ],
-            "description": "Fnirsi hs-01 (6.0 ohm) tip"
+            "description": "Fnirsi HS-01 (6.0 ohm) tip"
+        },
+        {
+            "id": "SettingPTS_TipString",
+            "default": "PTS",
+            "include": [
+                "MODEL_Pinecil"
+            ],
+            "description": "PTS200 (4.0 ohm) tip"
         }
     ],
     "characters": [
@@ -300,12 +308,12 @@
         },
         {
             "id": "TipTypePinecil",
-            "maxLen": 6,
+            "maxLen": 5,
             "maxLen2": 15,
             "include": [
                 "MODEL_Pinecil"
             ],
-            "description": "Model of tip used with soldering iron (TS - TS100 (8 ohm) tip, ST - Pinecilv2 (6.2 ohm) short tip, HS - Fnirsi (6.0 ohm) tip)."
+            "description": "Model of tip used with soldering iron (TS - TS100 (8.0 Ohm) tip, ST - Pinecilv2 (6.2 Ohm) short tip, HS - Fnirsi HS-01 (6.0 Ohm) tip, PTS - PTS200 (4.0 Ohm) tip)."
         },
         {
             "id": "BoostTemperature",

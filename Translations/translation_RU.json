@@ -80,6 +80,9 @@
         },
         "SettingHS_TipString": {
             "message": "HS"
+        },
+        "SettingPTS_TipString": {
+            "message": "PTS"
         }
     },
     "characters": {
@@ -140,7 +143,7 @@
         },
         "TipTypePinecil": {
             "displayText": "Выбранное\nжало",
-            "description": "Тип жала, используемого с паяльником (TS=жало TS100 (8 Ом) | ST=короткое жало Pinecilv2 (6.2 Ом) | HS=жало Fnirsi (6.0 Ом))"
+            "description": "Тип жала, используемого с паяльником (TS=жало TS100 (8.0 Ом) | ST=короткое жало Pinecilv2 (6.2 Ом) | HS=жало Fnirsi HS-01 (6.0 Ом) | PTS=жало PTS200 (4.0 Ом))"
         },
         "BoostTemperature": {
             "displayText": "t° турбо\nрежима",

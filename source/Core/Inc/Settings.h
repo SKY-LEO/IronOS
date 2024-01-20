@@ -102,7 +102,8 @@ typedef enum {
 typedef enum {
   TS_TS100_TIP   = 0, // TS100 (8.0 ohm) tip
   ST_PINECIL_TIP = 1, // Pinecilv2 (6.2 ohm) short tip
-  HS_FNIRSI_TIP  = 2, // Fnirsi hs-01 (6.0 ohm) tip
+  HS_FNIRSI_TIP  = 2, // Fnirsi HS-01 (6.0 ohm) tip
+  PTS200_TIP = 3,     // PTS200 (4.0 ohm) tip
 } tipTypePinecil_t;
 
 // Settings wide operations

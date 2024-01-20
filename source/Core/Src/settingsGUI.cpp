@@ -294,7 +294,7 @@ const menuitem solderingMenu[] = {
    */
   /* Tip Type Pinecil */
 #ifdef MODEL_Pinecil
-  {SETTINGS_DESC(SettingsItemIndex::TipTypePinecil), nullptr, displayTipTypePinecil, nullptr, SettingsOptions::TipTypePinecil, SettingsItemIndex::TipTypePinecil, 6},
+  {SETTINGS_DESC(SettingsItemIndex::TipTypePinecil), nullptr, displayTipTypePinecil, nullptr, SettingsOptions::TipTypePinecil, SettingsItemIndex::TipTypePinecil, 5},
 #endif
   /* Boost Temp */
   {SETTINGS_DESC(SettingsItemIndex::BoostTemperature), setBoostTemp, displayBoostTemp, nullptr, SettingsOptions::SettingsOptionsLength, SettingsItemIndex::BoostTemperature, 5},
@@ -792,6 +792,9 @@ static void displayTipTypePinecil(void) {
     break;
   case tipTypePinecil_t::HS_FNIRSI_TIP:
     OLED::print(translatedString(Tr->SettingHS_TipString), FontStyle::LARGE);
+    break;
+  case tipTypePinecil_t::PTS200_TIP:
+    OLED::print(translatedString(Tr->SettingPTS_TipString), FontStyle::LARGE);
     break;
   default:
     OLED::drawArea(OLED_WIDTH - 16 - 2, 0, 16, 16, UnavailableIcon);
