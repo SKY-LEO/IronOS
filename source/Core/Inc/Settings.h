@@ -67,8 +67,9 @@ enum SettingsOptions {
   ProfilePhase5Temp              = 50, // Temperature to target for the end of phase 5
   ProfilePhase5Duration          = 51, // Target duration for phase 5
   ProfileCooldownSpeed           = 52, // Maximum allowed cooldown speed in degrees per second
+  TipTypePinecil                 = 53, // Manual choice of tip used with Pinecil
   //
-  SettingsOptionsLength = 53, //
+  SettingsOptionsLength = 54, //
 };
 
 typedef enum {
@@ -97,6 +98,12 @@ typedef enum {
   ONETIME  = 5, // Show boot logo once (if animated) and stall until a button toggled
   INFINITY = 6, // Show boot logo on repeat (if animated) until a button toggled
 } logoMode_t;
+
+typedef enum {
+  TS_TS100_TIP   = 0, // TS100 (8.0 ohm) tip
+  ST_PINECIL_TIP = 1, // Pinecilv2 (6.2 ohm) short tip
+  HS_FNIRSI_TIP  = 2, // Fnirsi hs-01 (6.0 ohm) tip
+} tipTypePinecil_t;
 
 // Settings wide operations
 void saveSettings();

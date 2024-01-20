@@ -93,11 +93,45 @@ void setBuzzer(bool on) {}
 uint8_t  preStartChecks() { return 1; }
 uint64_t getDeviceID() { return dbg_id_get(); }
 
-uint8_t getTipResistanceX10() { return TIP_RESISTANCE; }
+uint8_t getTipResistanceX10() { 
+  switch (getSettingValue(SettingsOptions::TipTypePinecil)) {
+  case tipTypePinecil_t::TS_TS100_TIP:
+    return 75;
+  case tipTypePinecil_t::ST_PINECIL_TIP:
+    return 62;
+  case tipTypePinecil_t::HS_FNIRSI_TIP:
+    return 60;
+  default:
+    return 75;
+  }
+}
+
 bool    isTipShorted() { return false; }
 uint8_t preStartChecksDone() { return 1; }
 
-uint16_t getTipThermalMass() { return TIP_THERMAL_MASS; }
-uint16_t getTipInertia() { return TIP_THERMAL_MASS; }
+uint16_t getTipThermalMass() {
+  switch (getSettingValue(SettingsOptions::TipTypePinecil)) {
+  case tipTypePinecil_t::TS_TS100_TIP:
+    return 65;
+  case tipTypePinecil_t::ST_PINECIL_TIP:
+    return 160;
+  case tipTypePinecil_t::HS_FNIRSI_TIP:
+    return 280;
+  default:
+    return 65;
+  }
+}
+uint16_t getTipInertia() { 
+  switch (getSettingValue(SettingsOptions::TipTypePinecil)) {
+  case tipTypePinecil_t::TS_TS100_TIP:
+    return 65;
+  case tipTypePinecil_t::ST_PINECIL_TIP:
+    return 300;
+  case tipTypePinecil_t::HS_FNIRSI_TIP:
+    return 2000;
+  default:
+    return 65;
+  } 
+}
 
 void showBootLogo(void) { BootLogo::handleShowingLogo((uint8_t *)FLASH_LOGOADDR); }

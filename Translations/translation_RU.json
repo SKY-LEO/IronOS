@@ -71,6 +71,15 @@
         },
         "TooHotToStartProfileWarning": {
             "message": "Слишком горячо для\nстарта профиля"
+        },
+        "SettingTS_TipString": {
+            "message": "TS"
+        },
+        "SettingST_TipString": {
+            "message": "ST"
+        },
+        "SettingHS_TipString": {
+            "message": "HS"
         }
     },
     "characters": {
@@ -128,6 +137,10 @@
         "PDVpdo": {
             "displayText": "PD\nVPDO",
             "description": "Включить режимы PPS & EPR"
+        },
+        "TipTypePinecil": {
+            "displayText": "Выбранное\nжало",
+            "description": "Тип жала, используемого с паяльником (TS=жало TS100 (8 Ом) | ST=короткое жало Pinecilv2 (6.2 Ом) | HS=жало Fnirsi (6.0 Ом))"
         },
         "BoostTemperature": {
             "displayText": "t° турбо\nрежима",
