@@ -131,6 +131,30 @@
                 "PROFILE_SUPPORT"
             ],
             "description": "Shown when profile mode is started while the device is too hot."
+        },
+        {
+            "id": "SettingTS_TipString",
+            "default": "TS",
+            "include": [
+                "MODEL_Pinecil"
+            ],
+            "description": "TS100 (8.0 ohm) tip"
+        },
+        {
+            "id": "SettingST_TipString",
+            "default": "ST",
+            "include": [
+                "MODEL_Pinecil"
+            ],
+            "description": "Pinecilv2 (6.2 ohm) short tip"
+        },
+        {
+            "id": "SettingHS_TipString",
+            "default": "HS",
+            "include": [
+                "MODEL_Pinecil"
+            ],
+            "description": "Fnirsi hs-01 (6.0 ohm) tip"
         }
     ],
     "characters": [
@@ -273,6 +297,15 @@
                 "POW_PD"
             ],
             "description": "Enabled PPS & EPR modes."
+        },
+        {
+            "id": "TipTypePinecil",
+            "maxLen": 6,
+            "maxLen2": 15,
+            "include": [
+                "MODEL_Pinecil"
+            ],
+            "description": "Model of tip used with soldering iron (TS - TS100 (8 ohm) tip, ST - Pinecilv2 (6.2 ohm) short tip, HS - Fnirsi (6.0 ohm) tip)."
         },
         {
             "id": "BoostTemperature",

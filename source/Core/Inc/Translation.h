@@ -58,6 +58,7 @@ enum class SettingsItemIndex : uint8_t {
   QCMaxVoltage,
   PDNegTimeout,
   PDVpdo,
+  TipTypePinecil,
   BoostTemperature,
   AutoStart,
   TempChangeShortStep,
@@ -132,6 +133,10 @@ struct TranslationIndexTable {
   uint16_t SleepingTipAdvancedString;
   uint16_t DeviceFailedValidationWarning;
   uint16_t TooHotToStartProfileWarning;
+
+  uint16_t SettingTS_TipString;
+  uint16_t SettingST_TipString;
+  uint16_t SettingHS_TipString;
 
   uint16_t SettingRightChar;
   uint16_t SettingLeftChar;

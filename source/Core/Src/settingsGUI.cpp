@@ -52,6 +52,10 @@ static void displayPowerLimit(void);
 static void displayBluetoothLE(void);
 #endif /* BLE_ENABLED */
 
+#ifdef MODEL_Pinecil
+static void displayTipTypePinecil(void);
+#endif /* MODEL_Pinecil */
+
 #ifndef NO_DISPLAY_ROTATE
 static bool setDisplayRotation(void);
 static void displayDisplayRotation(void);
@@ -143,6 +147,7 @@ static bool enterAdvancedMenu(void);
  *  PDVpdo
  *
  * Soldering
+ *  Tip Type Pinecil
  *  Boost Mode Temp
  *  Auto Start
  *  Temp Change Short Step
@@ -266,6 +271,7 @@ const menuitem powerMenu[] = {
 
 const menuitem solderingMenu[] = {
   /*
+   *  Tip Type Pinecil
    *  Boost Mode Temp
    *  Auto Start
    *  Temp Change Short Step
@@ -286,6 +292,10 @@ const menuitem solderingMenu[] = {
    *  Profile Phase 5 Duration (s)
    *  Profile Cooldown Max Temperature Change Per Second
    */
+  /* Tip Type Pinecil */
+#ifdef MODEL_Pinecil
+  {SETTINGS_DESC(SettingsItemIndex::TipTypePinecil), nullptr, displayTipTypePinecil, nullptr, SettingsOptions::TipTypePinecil, SettingsItemIndex::TipTypePinecil, 6},
+#endif
   /* Boost Temp */
   {SETTINGS_DESC(SettingsItemIndex::BoostTemperature), setBoostTemp, displayBoostTemp, nullptr, SettingsOptions::SettingsOptionsLength, SettingsItemIndex::BoostTemperature, 5},
   /* Auto start */
@@ -770,6 +780,25 @@ static bool setTempF(void) {
 }
 
 static void displayTempF(void) { OLED::printSymbolDeg(FontStyle::LARGE); }
+
+#ifdef MODEL_Pinecil
+static void displayTipTypePinecil(void) {
+ switch (getSettingValue(SettingsOptions::TipTypePinecil)) {
+  case tipTypePinecil_t::TS_TS100_TIP:
+    OLED::print(translatedString(Tr->SettingTS_TipString), FontStyle::LARGE);
+    break;
+  case tipTypePinecil_t::ST_PINECIL_TIP:
+    OLED::print(translatedString(Tr->SettingST_TipString), FontStyle::LARGE);
+    break;
+  case tipTypePinecil_t::HS_FNIRSI_TIP:
+    OLED::print(translatedString(Tr->SettingHS_TipString), FontStyle::LARGE);
+    break;
+  default:
+    OLED::drawArea(OLED_WIDTH - 16 - 2, 0, 16, 16, UnavailableIcon);
+    break;
+  }
+}
+#endif
 
 #ifndef NO_DISPLAY_ROTATE
 
